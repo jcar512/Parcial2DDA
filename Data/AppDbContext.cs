@@ -9,6 +9,7 @@ namespace Parcial2DDA.Data
         {
         }
 
-        public DbSet<Ejemplo> Ejemplos { get; set; }
+        public DbSet<Registro> Registros { get; set; }
+        public DbSet<Reporte> Reportes {get; set; }
     }
 }

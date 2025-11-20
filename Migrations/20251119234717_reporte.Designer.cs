@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Parcial2DDA.Data;
 
@@ -11,9 +12,11 @@ using Parcial2DDA.Data;
 namespace Parcial2DDA.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251119234717_reporte")]
+    partial class reporte
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -60,12 +63,9 @@ namespace Parcial2DDA.Migrations
                     b.Property<double>("MaximaDiferenciaPeso")
                         .HasColumnType("float");
 
-                    b.Property<string>("MaximaDiferenciaTiempoString")
+                    b.Property<string>("MaximaDiferenciaTiempo")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<TimeSpan>("MaximaDiferenciaTiempoTimeSpan")
-                        .HasColumnType("time");
 
                     b.Property<int>("TotalMedicionesRealizadas")
                         .HasColumnType("int");
